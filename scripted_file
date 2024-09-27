@@ -3,7 +3,7 @@ pipeline {
         label 'java-agent-slave'
     }
     stages {
-        stage (Build) {
+        stage ('Build') {
             sh 'mvn --version'
         }
     }
