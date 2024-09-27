@@ -12,5 +12,14 @@ pipeline {
                 sh 'mvn --version'
             }  
         }
+        stage ('Build1') {
+            tools {
+                jdk 'jdk-17'
+            }
+            steps {
+                echo "Maven version with specific java version"
+                sh 'mvn --version'
+            }
+        }
     }
 }
