@@ -2,14 +2,27 @@ pipeline {
     agent {
         label 'java-agent-slave'
     }
-    environment {
+    environment {  //Global environment
         name = "Manohar"
         company = "Agiliad"
+        age = 31
     }
     stages {
         stage ("Stage1") {
             steps {
                 echo "My name is ${name}"
+                echo "I am working in ${company}"
+            }
+        }
+        stage ("Stage2") {
+            environment {
+                age = 32
+                name = "Nagireddy Manohar Naidu"
+                company = "New Company"
+            }
+            steps {
+                echo "My name is ${name}"
+                echo "My age is ${age}"
                 echo "I am working in ${company}"
             }
         }
