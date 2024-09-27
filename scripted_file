@@ -1,17 +1,15 @@
 pipeline {
     agent {
-        label 'java-agent-slave'
+        label "node-agent-slave"
     }
     stages {
-        stage ("Build") {
+        stage (Stage1) {
             steps {
-                retry(3) {
-                    echo "Welcome to Jenkins Pipeline"
-                    error "Testing retry block using eror"
+                timeout(time:5 & unit:SECONDS) {
+                    echo "Sleep for 60seconds"
+                    sleep 60
                 }
-                echo "**** After 3 retry's *******"
             }
-            
         }
     }
 }
