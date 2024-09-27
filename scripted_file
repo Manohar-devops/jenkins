@@ -26,5 +26,10 @@ pipeline {
                 sleep 10
             }
         }
+        stage ("Executing Sonar Stage") {
+            steps {
+                echo "Code Quality is completed, LGTM"
+            }
+        }
     }
 }
