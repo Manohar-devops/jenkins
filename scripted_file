@@ -6,6 +6,8 @@ pipeline {
         stage ("Build Stage") {
             steps {
                 echo "This is steps from stage under stages"
+                // linux commands
+                sh 'hostname -i'
             }
         }
         stage ("Scripted Stage") {
