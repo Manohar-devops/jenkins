@@ -2,7 +2,7 @@ pipeline {
     agent {
         label 'java-agent-slave'
     }
-    enviornment {
+    environment {
         name = "Manohar"
         company = "Agiliad"
     }
