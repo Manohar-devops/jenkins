@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo "My name is ${name}"
                 echo "I am working in ${company}"
+                echo "My age is ${age}"
             }
         }
         stage ("Stage2") {
