@@ -2,23 +2,15 @@ pipeline {
     agent {
         label 'java-agent-slave'
     }
-    tools {
-        maven 'MAVEN_PATH'
+    enviornment {
+        name = "Manohar"
+        age = 31
     }
     stages {
-        stage ('Build') {
+        stage ("Stage1") {
             steps {
-                echo "Maven Version with default java version"
-                sh 'mvn --version'
-            }  
-        }
-        stage ('Build1') {
-            tools {
-                jdk 'jdk-17'
-            }
-            steps {
-                echo "Maven version with specific java version"
-                sh 'mvn --version'
+                echo "My name is ${name}"
+                echo "My age is ${age}"
             }
         }
     }
