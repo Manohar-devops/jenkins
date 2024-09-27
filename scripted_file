@@ -4,13 +4,13 @@ pipeline {
     }
     enviornment {
         name = "Manohar"
-        age = 31
+        company = "Agiliad"
     }
     stages {
         stage ("Stage1") {
             steps {
                 echo "My name is ${name}"
-                echo "My age is ${age}"
+                echo "I am working in ${company}"
             }
         }
     }
