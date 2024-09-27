@@ -1,30 +1,16 @@
 pipeline {
     agent {
-        label 'java-agent-slave'
-    }
-    environment {  //Global environment
-        name = "Manohar"
-        company = "Agiliad"
-        age = 31
+        label 'node-agent-slave'
     }
     stages {
-        stage ("Stage1") {
-            steps {
-                echo "My name is ${name}"
-                echo "I am working in ${company}"
-                echo "My age is ${age}"
-            }
-        }
-        stage ("Stage2") {
+        stage ('Build') {
             environment {
-                age = 32
-                name = "Nagireddy Manohar Naidu"
-                company = "New Company"
+                GITHUB_CREDENTIALS = credentials('Manohar_git_psw')
             }
             steps {
-                echo "My name is ${name}"
-                echo "My age is ${age}"
-                echo "I am working in ${company}"
+                echo "My GitHib Credentials are ${GITHUB_CREDENTIALS}"
+                echo "My GitHub Usernme is ${GITHUB_CREDENTIALS_USR}"
+                echo "My GitHub Password is ${GITHUB_CREDENTIALS_PSW}"
             }
         }
     }
