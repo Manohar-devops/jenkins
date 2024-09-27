@@ -3,8 +3,11 @@ pipeline {
         label 'java-agent-slave'
     }
     stages {
-        stage ('Build') {
-            sh 'mvn --version'
+        stage (Build) {
+            steps {
+                echo "Maven Version with default java version"
+                sh 'mvn --version'
+            }  
         }
     }
 }
