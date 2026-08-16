@@ -1,15 +1,15 @@
 pipeline {
-    agent any
+    agent {
+        lable "java-agent-slave"
+    }
     stages {
-        stage ("This is Stage1") {
+        stage ("This is Stage1")
             steps {
-                echo "Welcome to Jenkins Pipeline"
+                echo "Welcome to the Jenkins Pipeline"
             }
-        }
-        stage ("This is Stage2") {
+            stage ("This is Stage2")
             steps {
-                echo "Welcome to Pipeline Script - Groove Sandbox"
+                echo "Welcome to the Git SCM"
             }
-        }
     }
 }
