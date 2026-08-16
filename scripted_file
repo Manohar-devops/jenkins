@@ -1,17 +1,15 @@
 pipeline {
     agent {
-        label 'node-agent-slave'
+        lable "java-agent-slave"
     }
     stages {
-        stage ('Build') {
-            environment {
-                GITHUB_CREDENTIALS = credentials('Manohar_git_psw')
-            }
+        stage ("This is Stage1")
             steps {
-                echo "My GitHib Credentials are ${GITHUB_CREDENTIALS}"
-                echo "My GitHub Usernme is ${GITHUB_CREDENTIALS_USR}"
-                echo "My GitHub Password is ${GITHUB_CREDENTIALS_PSW}"
+                echo "Welcome to the Jenkins Pipeline"
             }
-        }
+            stage ("This is Stage2")
+            steps {
+                echo "Welcome to the Git SCM"
+            }
     }
 }
