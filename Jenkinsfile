@@ -1,16 +1,20 @@
 pipeline {
-    agent {
-        label "java-agent-slave"
-    }
+    agent none
     stages {
-        stage ("This is Stage1") {
+        stage "This is Build Stage" {
+            agent {
+                label "java-agent-slave"
+            }
             steps {
-                echo "Welcome to Jenkins Pipeline"
+                echo "Build is Completed"
             }
         }
-        stage ("This is Stage2") {
+        stage "This is Code Quality Stage" {
+            agent {
+                label "node-agent-slave"
+            }
             steps {
-                echo "Welcome to Git SCM"
+                echo "Code Quality is Good"
             }
         }
     }
