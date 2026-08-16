@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage "This is Build Stage" {
+        stage ("This is Build Stage") {
             agent {
                 label "java-agent-slave"
             }
@@ -9,7 +9,7 @@ pipeline {
                 echo "Build is Completed"
             }
         }
-        stage "This is Code Quality Stage" {
+        stage ("This is Code Quality Stage") {
             agent {
                 label "node-agent-slave"
             }
